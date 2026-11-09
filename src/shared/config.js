@@ -15,7 +15,7 @@ function integer(name, fallback) {
 export const config = Object.freeze({
   port: integer('PORT', 3000),
   nodeEnv: process.env.NODE_ENV ?? 'development',
-  databaseUrl: required('DATABASE_URL'),
+  databaseUrl: process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING || (() => { throw new Error('Set DATABASE_URL or POSTGRES_URL'); })(),
   session: {
     cookieSecure: process.env.SESSION_COOKIE_SECURE === 'true',
     ttlHours: integer('SESSION_TTL_HOURS', 8)
