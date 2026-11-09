@@ -3,14 +3,11 @@ import { config } from './config.js';
 
 const poolConfig = {
   connectionString: config.databaseUrl,
-  max: 10,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 10000,
+  max: 3,
+  idleTimeoutMillis: 10000,
+  connectionTimeoutMillis: 5000,
+  ssl: { rejectUnauthorized: false },
 };
-
-if (config.nodeEnv === 'production' || config.databaseUrl.includes('supabase')) {
-  poolConfig.ssl = { rejectUnauthorized: false };
-}
 
 export const pool = new pg.Pool(poolConfig);
 
