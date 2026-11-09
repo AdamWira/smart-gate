@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: smart-gate
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_TTL_HOURS
+        value: "8"

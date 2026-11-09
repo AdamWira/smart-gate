@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Smart Gate — Admin</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>window.SMART_GATE_API_URL = "";</script>
+  <script defer src="/assets/js/app.js"></script>
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <main id="loginView" class="login-shell" hidden>
+    <section class="login-art">
+      <div class="brand"><span class="brand-mark">SG</span><span>Smart<span class="brand-light">Gate</span></span></div>
+      <div class="login-hero"><div class="eyebrow"><i></i> ACCESS CONTROL PLATFORM</div><h1>Secure access.<br><span>Clear oversight.</span></h1><p>Kelola akses gerbang dan pantau aktivitas dari satu tempat.</p><div class="gate-illustration"><div class="gate-top"><span></span><span></span><span></span><span></span><span></span></div><div class="gate-post"></div><div class="gate-arm"></div><div class="gate-base"></div><div class="gate-light"></div></div></div>
+      <div class="login-foot">SMART GATE ACCESS MANAGEMENT <span>•</span> v1.0</div>
+    </section>
+    <section class="login-panel"><form id="loginForm" class="login-card"><div class="mobile-brand brand"><span class="brand-mark">SG</span><span>Smart<span class="brand-light">Gate</span></span></div><div class="eyebrow">ADMIN PORTAL</div><h2>Selamat datang</h2><p class="muted">Masuk dengan akun administrator Anda.</p><label for="username">Username</label><div class="input-wrap"><span class="input-icon">◎</span><input id="username" name="username" autocomplete="username" placeholder="Masukkan username" required maxlength="80"></div><label for="password">Password</label><div class="input-wrap"><span class="input-icon">⌑</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required maxlength="200"><button type="button" id="togglePassword" class="toggle-password" aria-label="Tampilkan password">◉</button></div><div id="loginError" class="form-error" role="alert"></div><button class="button button-primary login-submit" type="submit"><span>Masuk ke Dashboard</span><span>→</span></button><div class="login-secure"><span>▣</span> Koneksi sesi terlindungi</div></form><div class="login-copy">© 2026 Smart Gate. Admin access only.</div></section>
+  </main>
+
+  <div id="appView" class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar"><a class="brand sidebar-brand" href="#dashboard"><span class="brand-mark">SG</span><span>Smart<span class="brand-light">Gate</span></span></a><div class="side-label">MENU UTAMA</div><nav class="side-nav" aria-label="Navigasi utama"><a href="#dashboard" data-page="dashboard" class="nav-item active"><span class="nav-icon">◫</span><span>Dashboard</span></a><a href="#users" data-page="users" class="nav-item"><span class="nav-icon">♙</span><span>Pengguna &amp; Kartu</span></a><a href="#logs" data-page="logs" class="nav-item"><span class="nav-icon">◷</span><span>Riwayat Akses</span></a><a href="#settings" data-page="settings" class="nav-item"><span class="nav-icon">⚙</span><span>Pengaturan</span></a></nav><div class="sidebar-bottom"><div class="help-card"><div class="help-icon">?</div><strong>Butuh bantuan?</strong><p>Hubungi administrator sistem untuk bantuan akses.</p></div><div class="sidebar-user"><div class="avatar" id="sideAvatar">A</div><div class="user-meta"><strong id="sideName">Admin</strong><span id="sideRole">Administrator</span></div><button class="icon-button logout-button" title="Keluar" aria-label="Keluar">↪</button></div></div></aside>
+    <div class="main-area"><header class="topbar"><button id="menuToggle" class="icon-button menu-toggle" aria-label="Buka navigasi">☰</button><div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="crumbTitle">Dashboard</strong></div><div class="top-actions"><span class="live-status"><i></i> Sistem aktif</span><button class="icon-button notification-button" aria-label="Notifikasi">♧<i></i></button><div class="top-avatar" id="topAvatar">A</div></div></header><main id="pageContent" class="page-content"></main></div>
+  </div>
+  <div id="modalRoot"></div>
+</body>
+</html>
